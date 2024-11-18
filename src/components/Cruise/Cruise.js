@@ -76,7 +76,7 @@ const Cruise = () => {
 
   const handleDestinationsClick = (destination) => {
     //using togglefunction for reusability
-    handleToggleSelection(destination ,setSelectedDestinations)
+    handleToggleSelection(destination, setSelectedDestinations)
     // setSelectedDestinations((prevDestinations) => {
     //   if (prevDestinations.includes(destination)) {
     //     return prevDestinations.filter((item) => item !== destination);
@@ -90,7 +90,7 @@ const Cruise = () => {
     setFilterModalopen(false)
   }
 
-  const handleApplyFilters = useCallback(() => {
+  const handleApplyFilters = () => {
     closeModal();
 
     const startDate = localDateRange[0].startDate;
@@ -173,8 +173,8 @@ const Cruise = () => {
     });
 
     console.log("Filtered Itineraries:", filteredItineraries);
-  }, [selectedDestinations, selectedDeparturePort, selectedNightRange, selectedTripType, localDateRange])
-
+  }
+  //selectedDestinations, selectedDeparturePort, selectedNightRange, selectedTripType, localDateRange
   console.log("ieie", itinerariesData)
 
   const handledepartureclick = (portname) => {
@@ -193,7 +193,7 @@ const Cruise = () => {
 
   const handleTriptype = (selectedtriptypes) => {
     //using togglefunction for reusability
-    handleToggleSelection(selectedtriptypes ,setSelectedTripType)
+    handleToggleSelection(selectedtriptypes, setSelectedTripType)
 
     // setSelectedTripType((prev) => {
     //   if (prev.includes(selectedtriptypes)) {
@@ -207,8 +207,8 @@ const Cruise = () => {
   console.log(selectedNightRange)
 
   const handleNightrange = (selectednightrange) => {
-     //using togglefunction for reusability
-     handleToggleSelection(selectednightrange, setSelectedNightRange)
+    //using togglefunction for reusability
+    handleToggleSelection(selectednightrange, setSelectedNightRange)
 
     // setSelectedNightRange((prev) => {
     //   if (prev.includes(selectednightrange)) {
@@ -332,7 +332,7 @@ const Cruise = () => {
                   <h6 className={styles.inclusiontext}>Inclusions</h6>
                   <div className={styles.inclusions}>
                     {itinerary?.inclusions?.map((inclusion, index) => (
-                      <div className='flex items-center justify-center' key={index}><img src={tickmark} alt='tickmarkLogo' />{inclusion + "|"}</div>
+                      <div key={index} className='flex items-center justify-center' ><img src={tickmark} alt='tickmarkLogo' />{inclusion + "|"}</div>
                     ))}
                   </div>
                 </div>
