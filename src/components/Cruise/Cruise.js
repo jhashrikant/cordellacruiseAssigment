@@ -65,7 +65,7 @@ const Cruise = () => {
       setLoading(false)
     } catch (error) {
       console.error(error);
-      setError(error || "An error occurred while fetching cruise data")
+      setError("An error occurred while fetching cruise data")
       setLoading(false)
     }
   };
@@ -90,7 +90,7 @@ const Cruise = () => {
     setFilterModalopen(false)
   }
 
-  const handleApplyFilters = () => {
+  const handleApplyFilters = useCallback(() => {
     closeModal();
 
     const startDate = localDateRange[0].startDate;
@@ -173,7 +173,7 @@ const Cruise = () => {
     });
 
     console.log("Filtered Itineraries:", filteredItineraries);
-  }
+  },[selectedDestinations, selectedDeparturePort, selectedNightRange, selectedTripType, localDateRange])
   //selectedDestinations, selectedDeparturePort, selectedNightRange, selectedTripType, localDateRange
   console.log("ieie", itinerariesData)
 
@@ -309,7 +309,7 @@ const Cruise = () => {
         />
 
 
-        {itinerariesData?.itineraries?.map((itinerary) => (
+        {itinerariesData && itinerariesData?.itineraries?.map((itinerary) => (
           <div key={itinerary.itinerary_id} className={styles.itenarycard}>
             <img className={styles.itineraryimg} src={itinerary?.image_url} alt="itineraryImg" />
             <div className={styles.details}>
