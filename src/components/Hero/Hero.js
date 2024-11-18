@@ -6,9 +6,9 @@ import arrowImg from "../../assets/Group 1171277276.png"
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      <img className={styles.heroImg} src={heroImg} alt='heroImg' />
-      <img className={styles.textImg} src={textImg} alt='10percentoff img' />
-      <img src={arrowImg} className={styles.arrowImg} alt='arrow Img' />
+      <img loading='lazy' className={styles.heroImg} src={heroImg} alt='heroImg' />
+      <img loading='lazy' className={styles.textImg} src={textImg} alt='10percentoff img' />
+      <img loading='lazy' src={arrowImg} className={styles.arrowImg} alt='arrow Img' />
     </section>
   )
 }
