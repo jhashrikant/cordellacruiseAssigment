@@ -1,0 +1,91 @@
+/* Modal.module.css */
+.modalOverlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 828px;
+  width: 90%;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.filterContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.selectionGroup {
+  width: 48%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.destinationButton {
+  background-color: #eee;
+  border: none;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.applyButton {
+  width: 100%;
+  background-color: purple;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #92278f;;
+}
+.selected{
+  /* background-color: blue; */
+  border: 2px solid #92278f;
+  color: #92278f;
+}
+
+@media(max-width: 1000px){
+  .modalContent{
+    width: 90%;
+  }
+
+  .date__container{
+    width: 72%;
+  }
+
+  .date{
+    width: 85%;
+  }
+}

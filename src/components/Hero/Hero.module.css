@@ -1,0 +1,57 @@
+/* .heroImg{
+  width: 100%;
+  height: 329px;
+  position: relative;
+}
+
+.textImg{
+  position: absolute;
+  top: 202px;
+  left: 131px;
+  width: 491px;
+    height: 135px;
+} */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto; /* Let the height adjust based on content */
+  overflow: hidden; /* Prevent any unwanted overflow */
+}
+
+.heroImg {
+  width: 100%; /* Make the image stretch across the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space under images */
+}
+
+.textImg {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 25%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to actual center */
+  width: 80%; /* Adjust relative to screen size */
+  max-width: 500px; /* Limit maximum width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.arrowImg {
+  position: absolute;
+  bottom: 10%; /* Adjust relative to the bottom of the hero section */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px; /* Set a reasonable width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .textImg {
+    width: 90%; /* Reduce width for smaller screens */
+    max-width: 200px;
+  }
+
+  .arrowImg {
+    width: 30px; /* Reduce size for smaller screens */
+  }
+}

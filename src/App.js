@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import Cruise from './components/Cruise/Cruise';
+//https://staging.cordeliacruises.com/api/v2/itineraries?pagination=false&#39;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Hero />
+      <Cruise />
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,239 @@
+.cruise__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* .iternary__Container{
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+  transition: box-shadow 0.2s ease-in-out; 
+} */
+
+.filterButton{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 491px;
+  height: 55px;
+  /* border: 1px solid black; */
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+  border-radius: 8px; /* Optional: adds rounded corners */
+  transition: box-shadow 0.2s ease-in-out; /* For smooth hover effect */
+  padding: 0 15px;
+}
+
+
+.itineraryimg{
+  width: 45%;
+  border-radius: 10px;
+}
+
+.itenarycard{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* border: 1px solid gray; */
+  margin: 19px 0px;
+  padding: 11px;
+  /* flex-wrap: wrap; */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+  border-radius: 8px; /* Optional: adds rounded corners */
+  transition: box-shadow 0.2s ease-in-out; /* For smooth hover effect */
+}
+
+.cruiseResultsContainer{
+  width: 80%;
+}
+
+.details{
+  margin: 0px 20px;
+  width: 55%;
+}
+
+.visitingPorts{
+  font-weight: 400;
+  font-size: 12px;
+  color: #4a4a4a;
+}
+
+
+.visitingPortsName{
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.bookNow{
+
+  padding: 15px;
+    font-size: 13px;
+    border: 1.5px solid #92278f;
+    border-radius: 5px;
+
+}
+.viewItinerary{
+  background-color: #92278f;
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+    font-size: 13px;
+    margin: 0px 10px;
+    border-radius: 5px;
+}
+
+.inclusions{
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.inclusiontext{
+  font-weight: 400;
+  font-size: 12px;
+  color: #4a4a4a;
+  /* margin-top: 20px; */
+}
+
+.offers_Container{
+  margin-top: 20px;
+  display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.offers{
+  margin-bottom: 5px;
+}
+.offersText{
+  /* color: #2274EO; */
+  font-weight: 500;
+  font-size: 14px;
+  color: #2274e0;
+  margin-bottom: 6px;
+}
+
+.inclusion__container{
+  display: flex;
+  align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.price{
+  font-weight: 700;
+  font-size: 34px;
+}
+
+.destinationpill , .clearAll{
+  color: rgb(147, 40, 142);
+  line-height: 1.25rem;
+  font-weight: 600;
+  border-radius: 9999px;
+
+  border-width: 2px; /* Larger border for large screens */
+  padding: 0.5rem 1rem; /* Larger padding for large screens */
+  font-size: 0.875rem; 
+  margin: 0px 10px;
+}
+
+.loading, .error, .noRecords {
+  font-size: 16px;
+  color: #555;
+  margin-top: 20px;
+}
+
+.filterSection{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.price.mobileHide {
+  display: block;
+}
+.price.mobileShow {
+  display: none;
+}
+
+.offersMain{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+@media (max-width: 1000px){
+  .itenarycard{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .itineraryimg{
+    width: 100%;
+  }
+
+  .details{
+    width: 98%;
+    margin: 0px;
+  }
+
+  .filterSection{
+    width: 90%;
+  }
+
+  .filterButton{
+    width: 90%;
+  }
+
+  .offers_Container{
+    /* flex-direction: column; */
+        align-items: flex-end;
+        width: 100%;
+        margin-bottom: 20px;
+  }
+
+  .bookNow{
+    width: 45%;
+  }
+
+  .viewItinerary{
+    width: 45%;
+  }
+
+  .btnContainer{
+    width: 100%;
+  }
+
+  .price.mobileHide {
+    display: none; /* Hide price in the inclusions section for mobile */
+  }
+
+  .price.mobileShow {
+    display: block; /* Show price inside the offers container for mobile */
+    margin-top: 10px; /* Optional: Add spacing */
+    text-align: center;
+    /* font-size: 1.2rem; */
+    font-weight: bold;
+  }
+  .offersMain{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media(max-width: 1000px){
+  
+}
