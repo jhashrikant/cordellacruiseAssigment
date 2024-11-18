@@ -22,7 +22,8 @@ const handleToggleSelection = (itemSelected, setselected) => {
   })
 }
 
-const API_URL = "https://staging.cordeliacruises.com/api/v2/itineraries?pagination=false";
+// const API_URL = "https://staging.cordeliacruises.com/api/v2/itineraries?pagination=false";
+const API_URL = process.env.REACT_APP_API_BASE_URL
 
 export { parseCustomDate, isObject, API_URL, handleToggleSelection }
 
