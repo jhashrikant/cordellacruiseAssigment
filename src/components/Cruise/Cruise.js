@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from "./Cruise.module.css";
 import Modal from '../CustomModal/Modal';
-import { API_URL, handleToggleSelection, isObject, parseCustomDate } from '../../helpers/utils';
+import { handleToggleSelection, isObject, parseCustomDate } from '../../helpers/utils';
 import tripstatus from "../../assets/Group 1171278275.png"
 import offerLogo from "../../assets/Amenities- line.png"
 import tickmark from "../../assets/icons.png"
 import FilterModal from '../quickFilterModal/FilterModal';
-
+const API_URL ="https://staging.cordeliacruises.com/api/v2/itineraries?pagination=false"
 
 const Cruise = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,6 +47,7 @@ const Cruise = () => {
   const fetchCruiseData = async () => {
     try {
       setLoading(true)
+      console.log('apiurl',API_URL)
       const response = await fetch(API_URL);
       if (!response.ok) {
         setError(`Some network error occured API request failed with status: ${response.status}`)
