@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from "./Cruise.module.css";
 import Modal from '../CustomModal/Modal';
-import { API_URL, isObject, parseCustomDate } from '../../helpers/utils';
+import { API_URL, handleToggleSelection, isObject, parseCustomDate } from '../../helpers/utils';
 import tripstatus from "../../assets/Group 1171278275.png"
 import offerLogo from "../../assets/Amenities- line.png"
 import tickmark from "../../assets/icons.png"
@@ -75,13 +75,15 @@ const Cruise = () => {
   }, []);
 
   const handleDestinationsClick = (destination) => {
-    setSelectedDestinations((prevDestinations) => {
-      if (prevDestinations.includes(destination)) {
-        return prevDestinations.filter((item) => item !== destination);
-      } else {
-        return [...prevDestinations, destination];
-      }
-    });
+    //using togglefunction for reusability
+    handleToggleSelection(destination ,setSelectedDestinations)
+    // setSelectedDestinations((prevDestinations) => {
+    //   if (prevDestinations.includes(destination)) {
+    //     return prevDestinations.filter((item) => item !== destination);
+    //   } else {
+    //     return [...prevDestinations, destination];
+    //   }
+    // });
   };
 
   const handlefilterModalclose = () => {
@@ -176,36 +178,45 @@ const Cruise = () => {
   console.log("ieie", itinerariesData)
 
   const handledepartureclick = (portname) => {
-    setSelectedDeparturePort((prev) => {
-      if (prev.includes(portname)) {
-        return prev.filter((item) => item !== portname);
-      } else {
-        return [...prev, portname];
-      }
-    })
+    //using togglefunction for reusability
+    handleToggleSelection(portname, setSelectedDeparturePort)
+
+    // setSelectedDeparturePort((prev) => {
+    //   if (prev.includes(portname)) {
+    //     return prev.filter((item) => item !== portname);
+    //   } else {
+    //     return [...prev, portname];
+    //   }
+    // })
   }
   console.log(selectedDeparturePort)
 
   const handleTriptype = (selectedtriptypes) => {
-    setSelectedTripType((prev) => {
-      if (prev.includes(selectedtriptypes)) {
-        return prev.filter((item) => item !== selectedtriptypes);
-      } else {
-        return [...prev, selectedtriptypes];
-      }
-    })
+    //using togglefunction for reusability
+    handleToggleSelection(selectedtriptypes ,setSelectedTripType)
+
+    // setSelectedTripType((prev) => {
+    //   if (prev.includes(selectedtriptypes)) {
+    //     return prev.filter((item) => item !== selectedtriptypes);
+    //   } else {
+    //     return [...prev, selectedtriptypes];
+    //   }
+    // })
   }
 
   console.log(selectedNightRange)
 
   const handleNightrange = (selectednightrange) => {
-    setSelectedNightRange((prev) => {
-      if (prev.includes(selectednightrange)) {
-        return prev.filter((item) => item !== selectednightrange);
-      } else {
-        return [...prev, selectednightrange];
-      }
-    })
+     //using togglefunction for reusability
+     handleToggleSelection(selectednightrange, setSelectedNightRange)
+
+    // setSelectedNightRange((prev) => {
+    //   if (prev.includes(selectednightrange)) {
+    //     return prev.filter((item) => item !== selectednightrange);
+    //   } else {
+    //     return [...prev, selectednightrange];
+    //   }
+    // })
   }
 
   console.log(selectedTripType)
