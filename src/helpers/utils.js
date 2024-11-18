@@ -12,7 +12,17 @@ function parseCustomDate(dateString) {
   return new Date(year, month - 1, day); // month is 0-based
 }
 
+const handleToggleSelection = (itemSelected, setselected) => {
+  setselected((prev) => {
+    if (prev.includes(itemSelected)) {
+      return prev.filter((item) => item !== itemSelected);
+    } else {
+      return [...prev, itemSelected];
+    }
+  })
+}
+
 const API_URL = "https://staging.cordeliacruises.com/api/v2/itineraries?pagination=false";
 
-export { parseCustomDate, isObject ,API_URL }
+export { parseCustomDate, isObject, API_URL, handleToggleSelection }
 
